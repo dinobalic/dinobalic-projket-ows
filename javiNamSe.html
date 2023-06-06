@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stil.css" type="text/css">
+	  
+    <title>Feel art</title>
+  </head>
+  <body>
+  
+    <nav-bar class="navbar-fixed-top">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">početna</a>
+        <a href="projketi.html">projekti</a>
+        <a href="trgovackiLanci.html">trgovački lanci</a>
+        <a href="oNama.html">o nama</a>
+        <a href="javiNamSe.html">javi nam se</a>
+      </div>
+      <div id="main">
+        <span id="openNav" style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()" >&#9776;</span>
+      </div>
+    </nav-bar>
+    
+    <div class="section" id="section">
+      <div class="video-bg">
+        <video autoplay loop muted>
+          <source src="video/javiNamSe.mp4" type="video/mp4">
+        </video>
+        <div class="typer">
+          <div class="desno">
+            <p><b>//</b></p>
+          <div class="typed-out">javi nam se</div>
+        </div>
+          <div class="button-sredina"><button class="dole-button" onclick="location.href='#sekcijaKolona'"></button></div>
+        </div>
+      </div>
+      </div>
+        </div>
+      </div>
+    
+      <div class="sekcijaKolona" id="sekcijaKolona">
+        <div class="sekcijaGornja">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2764.270397806432!2d15.869370476171866!3d46.14536147109326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765ed1bdbb64bdf%3A0x418f30a60bb121d8!2sPoduzetni%C4%8Dki%20centar%20Krapinsko-zagorske%20%C5%BEupanije!5e0!3m2!1sen!2shr!4v1684918537208!5m2!1sen!2shr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="sekcijaDonja">
+          <div class="lijeviDio">
+            <div class="forma-container">
+              <form action="" method="POST">
+                <div class="form-red">
+                  <label for="imePrezime"></label>
+                  <input type="text" id="imePrezime" name="imePrezime" required placeholder="Unesite ime i prezime">
+                  <label for="kontaktBroj"></label>
+                  <input type="tel" id="kontaktBroj" name="kontaktBroj" required placeholder="Unesite kontakt broj">
+                </div>
+                <div class="form-red">
+                  <label for="email"></label>
+                  <input type="email" id="email" name="email" required placeholder="Unesite email">
+                  <label for="subject"></label>
+                  <input type="text" id="subject" name="subject" required placeholder="Unesite subject">
+                </div>
+                <div class="form-red">
+                  <label for="poruka"></label>
+                  <textarea id="poruka" name="poruka" required placeholder="Unesite poruku"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="desniDio">
+            <p><b>F.I.L. art d.o.o.</b><br>
+              Gajeva 5, 49000 Krapina<br>
+              TEL: 049/300-233<br>
+              TEL: 049/300-225<br>
+              Fax: 049/300-224<br>
+              E-mail: info@fil-art.hr
+            <div class="form-submit">
+              <input type="submit" value="Pošalji">
+            </div>
+          </p>
+          </div>
+          
+
+        </div>
+      </div>
+
+      <?php
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $imePrezime = $_POST['imePrezime'];
+        $kontaktBroj = $_POST['kontaktBroj'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $poruka = $_POST['poruka'];
+      
+        // Slanje e-pošte
+        $to = 'balic.dino@hotmail.com';
+        $headers = "From: $email\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        $message = "Ime i prezime: $imePrezime\nKontakt broj: $kontaktBroj\nPoruka: $poruka";
+      
+        mail($to, $subject, $message, $headers);
+      }
+      ?>
+           
+    
+
+    
+    
+
+    <div class="section" id="section4">
+      <div class="footer-content">
+      <div class="left-content">
+        <img class="img-footer" src="image/logo-footer.png" alt="[feel art] GRAPHIC DESIGN STUDIO">
+            <p>Gajeva 5<br>
+            49 000 Krapina<br>
+            Tel: 049 300 223, 049 300 255<br>
+            Fax: 049 300 224<br>
+            E-mail: info@fil-art.hr</p>
+      </div>
+      <div class="right-content">
+        <a href="https://www.instagram.com/filartkrapina/"><img src="image/insta-gumb.png" alt="Instagram icon"></a>
+        <a href="https://www.facebook.com/FilArtKrapina/"><img src="image/fb-gumb.png" alt="Facebook icon"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
+    
+    <button id="back-to-top">Back to top</button>
+    
+    <script type="text/javascript" src="skripta.js"></script>
+
+  </body>
+</html>
